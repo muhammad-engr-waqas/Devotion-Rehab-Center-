@@ -1,6 +1,6 @@
-# Devotion Rehab Center HMS
+# Hospital Management System (HMS)
 
-This is a comprehensive Hospital Management & CRM system designed for Devotion Rehab Center.
+This is a comprehensive Hospital Management System.
 
 ## 📄 Documentation
 
@@ -24,5 +24,5 @@ For full technical details, feature guides, and setup instructions, please refer
 4. **Access UI**: Go to [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
 ## 🛡️ License
-Proprietary - Developed for Devotion Rehab Center.
+Proprietary - Hospital Management System.
 

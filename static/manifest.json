@@ -1,7 +1,7 @@
 {
-  "name": "Devotion Rehab Center CRM",
-  "short_name": "Devotion CRM",
-  "description": "Hospital Management CRM System for Devotion Rehab Center",
+  "name": "Hospital Management System",
+  "short_name": "HMS",
+  "description": "Hospital Management System",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -36,7 +36,7 @@
       "sizes": "512x512",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "Devotion Rehab Center HMS Dashboard"
+      "label": "Hospital Management System Dashboard"
     }
   ],
   "shortcuts": [

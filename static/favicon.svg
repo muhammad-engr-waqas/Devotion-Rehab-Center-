@@ -33,11 +33,11 @@
     <line x1="40" y1="26" x2="46" y2="46" stroke-width="1.2"/>
   </g>
 
-  <!-- DRC text - green bold -->
-  <text x="100" y="56" text-anchor="middle" font-family="Arial Black, Arial" font-weight="900" font-size="34" fill="#0d9488" letter-spacing="1">DRC</text>
+  <!-- HMS text - green bold -->
+  <text x="100" y="56" text-anchor="middle" font-family="Arial Black, Arial" font-weight="900" font-size="34" fill="#0d9488" letter-spacing="1">HMS</text>
 
-  <!-- Devotion Rehab Center -->
-  <text x="100" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="7" fill="#555555" letter-spacing="0.2">DEVOTION REHAB</text>
+  <!-- Hospital Management System -->
+  <text x="100" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="6" fill="#555555" letter-spacing="0.2">HOSPITAL MANAGEMENT</text>
 
   <!-- Addiction Treatment line -->
   <text x="100" y="83" text-anchor="middle" font-family="Arial, sans-serif" font-weight="400" font-size="6" fill="#888888" letter-spacing="0.3">Addiction Treatment &amp; Psychological Services</text>

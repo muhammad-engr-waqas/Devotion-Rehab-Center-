@@ -1,7 +1,7 @@
-# Devotion Rehab Center Hospital Management System (HMS)
+# Hospital Management System (HMS)
 
 ## 1. Introduction
-**Devotion Rehab Center HMS** is a robust, full-stack Hospital Management and Customer Relationship Management (CRM) system designed for Devotion Rehab Center. It streamlines patient admissions, financial tracking, medical records, and daily administrative operations.
+**Hospital Management System (HMS)** is a robust, full-stack Hospital Management and Customer Relationship Management (CRM) system. It streamlines patient admissions, financial tracking, medical records, and daily administrative operations.
 
 The system is built as a highly interactive, single-page application (SPA) focused on usability, data integrity, and role-based access.
 
