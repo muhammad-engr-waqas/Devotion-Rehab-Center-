@@ -154,19 +154,29 @@
     }
 
     body {
-      font-family: 'Poppins', 'Inter', sans-serif;
-      color: #212121;
-      background-color: #F8F9FA;
+      font-family: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #1E293B;
+      background-color: #F8FAFC;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    /* CRM SYSTEM THEME ENHANCEMENTS */
-    thead.bg-teal-600, thead.bg-teal-700, thead.bg-cyan-600, thead.bg-cyan-700 {
-      background-color: #1E2A5E !important;
+    /* CRM SYSTEM PROFESSIONAL THEME ENHANCEMENTS */
+    thead.bg-teal-600, thead.bg-teal-700, thead.bg-cyan-600, thead.bg-cyan-700, thead.bg-navy-800 {
+      background: linear-gradient(180deg, #1E2A5E 0%, #17224D 100%) !important;
       color: #ffffff !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.04em !important;
+      text-transform: uppercase !important;
+      font-size: 0.72rem !important;
     }
     
+    tbody tr {
+      transition: background-color 0.15s ease;
+    }
+
     tbody tr:hover {
-      background-color: #F2F5FD !important;
+      background-color: #F0F4FD !important;
     }
 
     .bg-teal-600:not(.badge), .bg-teal-700, .bg-cyan-600, .bg-cyan-700 {
@@ -185,11 +195,11 @@
     }
 
     .border-teal-100, .border-teal-200 {
-      border-color: #E5E7EB !important;
+      border-color: #E2E8F0 !important;
     }
 
     .bg-teal-50 {
-      background-color: #F2F5FD !important;
+      background-color: #F0F4FD !important;
     }
 
     /* Soft Modern Scrollbar */
@@ -198,7 +208,7 @@
       height: 6px;
     }
     ::-webkit-scrollbar-track {
-      background: #F8F9FA;
+      background: #F8FAFC;
     }
     ::-webkit-scrollbar-thumb {
       background: #CBD7F3;
@@ -211,10 +221,17 @@
     /* Card & Modal Polish */
     .card-modern {
       background: #FFFFFF;
-      border: 1px solid #E5E7EB;
+      border: 1px solid #E2E8F0;
       border-radius: 1rem;
-      box-shadow: 0 2px 12px rgba(30, 42, 94, 0.04);
-      transition: box-shadow 0.2s ease;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03), 0 8px 20px -4px rgba(30, 42, 94, 0.05);
+      transition: box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Form Inputs Focus Polish */
+    input:focus, select:focus, textarea:focus {
+      outline: none !important;
+      border-color: #1E2A5E !important;
+      box-shadow: 0 0 0 3px rgba(30, 42, 94, 0.12) !important;
     }
 
     .urdu-text {
@@ -1843,7 +1860,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 12px 35px rgba(227, 30, 36, .35), 0 0 0 8px rgba(227, 30, 36, .12);
+      box-shadow: 0 10px 30px rgba(30, 42, 94, .35), 0 0 0 6px rgba(203, 215, 243, .25), 0 0 0 12px rgba(227, 30, 36, .15);
       margin-bottom: 18px;
       animation: pulseGlow 3s ease-in-out infinite;
     }
@@ -1855,8 +1872,8 @@
     }
 
     @keyframes pulseGlow {
-      0%, 100% { box-shadow: 0 10px 40px rgba(227, 30, 36, .35), 0 0 0 8px rgba(227, 30, 36, .12) }
-      50% { box-shadow: 0 12px 50px rgba(227, 30, 36, .55), 0 0 0 14px rgba(227, 30, 36, .18) }
+      0%, 100% { box-shadow: 0 10px 30px rgba(30, 42, 94, .35), 0 0 0 6px rgba(203, 215, 243, .25), 0 0 0 12px rgba(227, 30, 36, .15); transform: scale(1); }
+      50% { box-shadow: 0 14px 45px rgba(30, 42, 94, .5), 0 0 0 10px rgba(203, 215, 243, .35), 0 0 0 18px rgba(227, 30, 36, .22); transform: scale(1.02); }
     }
 
     .brand-name-login {
@@ -2847,8 +2864,9 @@
               <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px; gap: 15px; border-bottom: 2px solid #10b981; padding-bottom: 15px;">
                 <img src="/static/logo.jpg" alt="Hospital Management System" style="height:60px;width:60px;object-fit:contain;border-radius:50%;">
                 <div style="text-align: center">
-                  <div style="font-size: 18px; font-weight: bold; color: #059669">Hospital Management System</div>
-                  <div style="font-size: 12px; color: #666">Call &amp; Meeting Tracker</div>
+                  <div style="font-size: 18px; font-weight: bold; color: #1E2A5E">Hospital Management System</div>
+                  <div style="font-size: 12px; color: #555; font-weight: 500;">Call &amp; Meeting Tracker</div>
+                  <div style="font-size: 10px; color: #777; margin-top: 3px;"><i class="fas fa-phone mr-1"></i>0300-XXXXXXX &nbsp;|&nbsp; <i class="fas fa-envelope mr-1"></i>hosiptalms@gmail.com</div>
                 </div>
               </div>
               <div class="header">
@@ -8176,7 +8194,7 @@
               <header>
                 <h1>Hospital Management System</h1>
                 <p>Daily Patient Activity Report</p>
-                <p style="margin-top:4px;">&#9742; 0333 6001971</p>
+                <p style="margin-top:4px;">&#9742; 0300-XXXXXXX &nbsp;|&nbsp; &#9993; hosiptalms@gmail.com</p>
               </header>
               <div class="report-meta">
                 <span>Date: ${reportDate}</span>
@@ -9182,10 +9200,10 @@
               <img src="/static/logo.jpg" alt="Logo" style="height:48px;width:48px;object-fit:contain;border-radius:50%;">
             </div>
             <div class="text-center flex-1">
-              <h1 class="font-extrabold text-[#4338ca] tracking-wider" style="font-size: 20px; line-height: 1.2;">Hospital Management System</h1>
+              <h1 class="font-extrabold text-[#1E2A5E] tracking-wider" style="font-size: 20px; line-height: 1.2;">Hospital Management System</h1>
               <div class="border-t border-gray-400 mt-1 mb-1 w-1/2 mx-auto"></div>
-              <p class="text-[8px] text-gray-600 tracking-wide uppercase">Addiction Treatment & Psychological Services</p>
-              <p class="text-[9px] mt-1"><i class="fas fa-phone-alt mr-1"></i>0333 6001971</p>
+              <p class="text-[8px] text-gray-600 tracking-wide uppercase">Healthcare &amp; Clinical Services</p>
+              <p class="text-[9px] mt-1 text-gray-700 font-medium"><i class="fas fa-phone-alt mr-1 text-[#E31E24]"></i>0300-XXXXXXX &nbsp;|&nbsp; <i class="fas fa-envelope ml-1 mr-1 text-[#1E2A5E]"></i>hosiptalms@gmail.com</p>
             </div>
             <div class="w-16"></div>
           </div>
@@ -9378,14 +9396,14 @@
             <div class="contact-icon-new"><i class="fas fa-phone-alt text-xs"></i></div>
             <div>
               <div style="font-size:0.68rem;color:#71717A;text-transform:uppercase;letter-spacing:1px;font-weight:600;">Helpline</div>
-              <div style="color:#1E2A5E;font-weight:600;font-size:0.9rem;">0333 6001971</div>
+              <div style="color:#1E2A5E;font-weight:600;font-size:0.9rem;">0300-XXXXXXX</div>
             </div>
           </div>
           <div class="contact-item-new">
             <div class="contact-icon-new"><i class="fas fa-envelope text-xs"></i></div>
             <div>
               <div style="font-size:0.68rem;color:#71717A;text-transform:uppercase;letter-spacing:1px;font-weight:600;">Email Support</div>
-              <div style="color:#1E2A5E;font-weight:600;font-size:0.9rem;">info@devotionrehab.com</div>
+              <div style="color:#1E2A5E;font-weight:600;font-size:0.9rem;">hosiptalms@gmail.com</div>
             </div>
           </div>
         </div>
@@ -11717,13 +11735,13 @@
             Hospital Management System
           </h1>
           <p class="text-[9px] text-gray-500 mt-1 leading-tight whitespace-nowrap" style="margin: 4px 0 0 0">
-            Addiction Treatment & Psychological Services
+            Healthcare &amp; Clinical Services
           </p>
           <p class="text-[9px] text-gray-500 leading-tight whitespace-nowrap" style="margin: 0">
             Lahore, Pakistan
           </p>
           <p class="text-[9px] text-gray-500 leading-tight whitespace-nowrap" style="margin: 0">
-            <i class="fas fa-phone mr-1"></i>0333 6001971
+            <i class="fas fa-phone mr-1"></i>0300-XXXXXXX &nbsp;|&nbsp; <i class="fas fa-envelope mr-1"></i>hosiptalms@gmail.com
           </p>
         </td>
 
@@ -11854,9 +11872,9 @@
       <div class="print-header">
         <img src="/static/logo.jpg" alt="Hospital Management System" class="print-logo-icon" style="height:55px;width:55px;object-fit:contain;border-radius:50%;">
         <div class="print-title-block">
-          <div class="print-sub-pro" style="font-size:16px;">Hospital Management System</div>
-          <div class="print-tagline">Addiction Treatment & Psychological Services</div>
-          <div class="print-tagline"><i class="fas fa-phone mr-1"></i>0333 6001971</div>
+          <div class="print-sub-pro" style="font-size:16px;font-weight:700;color:#1E2A5E;">Hospital Management System</div>
+          <div class="print-tagline">Healthcare &amp; Clinical Services</div>
+          <div class="print-tagline"><i class="fas fa-phone mr-1"></i>0300-XXXXXXX &nbsp;|&nbsp; <i class="fas fa-envelope mr-1"></i>hosiptalms@gmail.com</div>
         </div>
       </div>
 
@@ -12121,9 +12139,9 @@
       <div class="flex items-center justify-center gap-4 border-b-2 border-gray-800 pb-6 mb-6">
         <img src="/static/logo.jpg" alt="Hospital Management System" style="height:70px;width:70px;object-fit:contain;border-radius:50%;">
         <div class="text-center">
-          <h2 class="text-2xl font-bold tracking-wider">Hospital Management System</h2>
-          <p class="text-sm text-gray-600 uppercase tracking-widest mt-1">Payment Receipt</p>
-          <p class="text-xs text-gray-500 mt-1"><i class="fas fa-phone mr-1"></i>0333 6001971</p>
+          <h2 class="text-2xl font-bold tracking-wider text-[#1E2A5E]">Hospital Management System</h2>
+          <p class="text-sm text-gray-600 uppercase tracking-widest mt-1 font-semibold">Payment Receipt</p>
+          <p class="text-xs text-gray-500 mt-1"><i class="fas fa-phone mr-1 text-[#E31E24]"></i>0300-XXXXXXX &nbsp;|&nbsp; <i class="fas fa-envelope mr-1 text-[#1E2A5E]"></i>hosiptalms@gmail.com</p>
         </div>
       </div>
 
@@ -12184,7 +12202,7 @@
 
       <div class="text-center mt-8 text-xs text-gray-400">
         <p>Thank you for your payment.</p>
-        <p>Hospital Management System - Addiction Treatment & Psychological Services</p>
+        <p>Hospital Management System - Healthcare &amp; Clinical Services</p>
       </div>
     </div>
   </div>
@@ -12800,12 +12818,12 @@
           <div class="flex items-center gap-4">
             <img src="/static/logo.jpg" alt="Hospital Management System" style="height:70px;width:70px;object-fit:contain;border-radius:50%;">
             <div>
-              <h2 class="text-lg font-bold text-teal-800 tracking-widest uppercase mb-1">
+              <h2 class="text-lg font-bold text-[#1E2A5E] tracking-widest uppercase mb-1">
                 Hospital Management System
               </h2>
-              <p class="text-xs text-gray-500">Addiction Treatment & Psychological Services</p>
+              <p class="text-xs text-gray-500 font-medium">Healthcare &amp; Clinical Services</p>
               <p class="text-xs text-gray-500">Lahore, Pakistan</p>
-              <p class="text-xs text-gray-500"><i class="fas fa-phone mr-1"></i>0333 6001971</p>
+              <p class="text-xs text-gray-500"><i class="fas fa-phone mr-1 text-[#E31E24]"></i>0300-XXXXXXX &nbsp;|&nbsp; <i class="fas fa-envelope mr-1 text-[#1E2A5E]"></i>hosiptalms@gmail.com</p>
             </div>
           </div>
           <div class="text-right">

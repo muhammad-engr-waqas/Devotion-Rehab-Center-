@@ -39,6 +39,6 @@
   <!-- Hospital Management System -->
   <text x="100" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="6" fill="#555555" letter-spacing="0.2">HOSPITAL MANAGEMENT</text>
 
-  <!-- Addiction Treatment line -->
-  <text x="100" y="83" text-anchor="middle" font-family="Arial, sans-serif" font-weight="400" font-size="6" fill="#888888" letter-spacing="0.3">Addiction Treatment &amp; Psychological Services</text>
+  <!-- Healthcare & Clinical Services line -->
+  <text x="100" y="83" text-anchor="middle" font-family="Arial, sans-serif" font-weight="400" font-size="6" fill="#888888" letter-spacing="0.3">Healthcare &amp; Clinical Services</text>
 </svg>
