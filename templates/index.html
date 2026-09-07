@@ -34,43 +34,83 @@
         extend: {
           colors: {
             navy: {
-              50: '#F2F5FD',
-              100: '#E5EAF9',
+              50: '#F0F4FD',
+              100: '#E1E9FB',
               200: '#CBD7F3',
               300: '#A3B8EA',
               400: '#7392DD',
               500: '#4F70CE',
               600: '#3854BA',
               700: '#28387A',
-              800: '#1E2A5E', // Primary Brand Deep Navy
+              800: '#1E2A5E', // Primary Executive Deep Navy
               900: '#141C40',
               950: '#0F1530',
             },
+            // Map legacy teal to cohesive executive navy & ice-blue accents
+            teal: {
+              50: '#F0F4FD',
+              100: '#E0E7FF',
+              200: '#CBD7F3',
+              300: '#A3B8EA',
+              400: '#4F70CE',
+              500: '#28387A',
+              600: '#1E2A5E',
+              700: '#17214A',
+              800: '#111836',
+              900: '#0B1024',
+            },
+            // Clinical Sky / Cyan for informational highlights
+            cyan: {
+              50: '#F0F9FF',
+              100: '#E0F2FE',
+              200: '#BAE6FD',
+              300: '#7DD3FC',
+              400: '#38BDF8',
+              500: '#0EA5E9',
+              600: '#0284C7',
+              700: '#0369A1',
+              800: '#075985',
+              900: '#0C4A6E',
+            },
+            // Clinical Emerald for health / paid / active states
+            emerald: {
+              50: '#ECFDF5',
+              100: '#D1FAE5',
+              200: '#A7F3D0',
+              300: '#6EE7B7',
+              400: '#34D399',
+              500: '#10B981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065F46',
+              900: '#064E3B',
+            },
             brandRed: {
-              DEFAULT: '#E31E24', // Accent Red
+              DEFAULT: '#E31E24', // Medical Accent Red
               hover: '#C7171C',
               active: '#A81014',
               light: '#FEE2E2',
               subtle: '#FFF5F5',
             },
             charcoal: {
-              DEFAULT: '#212121', // Neutral Text
-              muted: '#555555',
-              soft: '#71717A',
-              light: '#A1A1AA',
+              DEFAULT: '#1E293B', // Modern Slate
+              muted: '#475569',
+              soft: '#64748B',
+              light: '#94A3B8',
             },
             surface: {
-              DEFAULT: '#F8F9FA',
+              DEFAULT: '#F8FAFC',
               card: '#FFFFFF',
-              border: '#E5E7EB',
+              border: '#E2E8F0',
             },
-            success: '#28A745',
-            warning: '#FFC107',
+            success: '#10B981',
+            warning: '#F59E0B',
           },
           boxShadow: {
-            'soft': '0 2px 10px rgba(30, 42, 94, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03)',
-            'soft-lg': '0 10px 25px -3px rgba(30, 42, 94, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.02)',
-            'card': '0 4px 20px rgba(30, 42, 94, 0.04)',
+            'soft': '0 2px 8px rgba(30, 42, 94, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02)',
+            'soft-lg': '0 12px 28px -4px rgba(30, 42, 94, 0.08), 0 4px 8px -2px rgba(0, 0, 0, 0.03)',
+            'card': '0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 10px 24px -5px rgba(30, 42, 94, 0.06)',
+            'card-hover': '0 8px 30px -4px rgba(30, 42, 94, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04)',
             'red-glow': '0 4px 14px rgba(227, 30, 36, 0.35)',
             'navy-glow': '0 4px 14px rgba(30, 42, 94, 0.35)',
           },
@@ -121,32 +161,32 @@
       --navy-dark: #141C40;
       --navy-deep: #0F1530;
       --navy-light: #28387A;
-      --navy-subtle: #F2F5FD;
+      --navy-subtle: #F0F4FD;
       --accent-red: #E31E24;
       --accent-red-hover: #C7171C;
       --accent-red-light: #FEE2E2;
       --accent-red-glow: rgba(227, 30, 36, 0.25);
-      --charcoal: #212121;
-      --charcoal-muted: #555555;
-      --charcoal-light: #71717A;
-      --bg-surface: #F8F9FA;
+      --charcoal: #1E293B;
+      --charcoal-muted: #475569;
+      --charcoal-light: #64748B;
+      --bg-surface: #F8FAFC;
       --bg-card: #FFFFFF;
-      --border-color: #E5E7EB;
+      --border-color: #E2E8F0;
       --border-focus: #1E2A5E;
-      --success-green: #28A745;
-      --warning-amber: #FFC107;
+      --success-green: #10B981;
+      --warning-amber: #F59E0B;
 
       /* Mapping legacy variables */
       --shamrock: #CBD7F3;
       --shamrock-strong: #1E2A5E;
       --forest: #0F1530;
-      --amber: #FFC107;
+      --amber: #F59E0B;
       --sky: #1E2A5E;
-      --surface: #F8F9FA;
+      --surface: #F8FAFC;
       --card: #FFFFFF;
-      --text-main: #212121;
-      --text-muted: #555555;
-      --border-soft: #E5E7EB;
+      --text-main: #1E293B;
+      --text-muted: #475569;
+      --border-soft: #E2E8F0;
       --brand-primary: #1E2A5E;
       --brand-primary-dark: #141C40;
       --brand-secondary: #E31E24;
@@ -161,14 +201,23 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    /* CRM SYSTEM PROFESSIONAL THEME ENHANCEMENTS */
-    thead.bg-teal-600, thead.bg-teal-700, thead.bg-cyan-600, thead.bg-cyan-700, thead.bg-navy-800 {
-      background: linear-gradient(180deg, #1E2A5E 0%, #17224D 100%) !important;
-      color: #ffffff !important;
+    /* GLOBAL HEALTHCARE ENTERPRISE THEME ENHANCEMENTS */
+
+    /* Professional Table Header & Cells */
+    table {
+      border-collapse: separate;
+      border-spacing: 0;
+    }
+    thead th, thead.bg-teal-600 th, thead.bg-teal-700 th, thead.bg-cyan-600 th, thead.bg-navy-800 th {
+      background: linear-gradient(180deg, #1E2A5E 0%, #162047 100%) !important;
+      color: #FFFFFF !important;
       font-weight: 700 !important;
       letter-spacing: 0.04em !important;
       text-transform: uppercase !important;
       font-size: 0.72rem !important;
+      border-bottom: 2px solid #28387A !important;
+      padding-top: 0.7rem !important;
+      padding-bottom: 0.7rem !important;
     }
     
     tbody tr {
@@ -179,11 +228,21 @@
       background-color: #F0F4FD !important;
     }
 
-    .bg-teal-600:not(.badge), .bg-teal-700, .bg-cyan-600, .bg-cyan-700 {
-      background-color: #1E2A5E !important;
+    /* Cohesive Primary Buttons */
+    button.bg-teal-600, button.bg-teal-700, button.bg-cyan-600, button.bg-indigo-600 {
+      background: linear-gradient(135deg, #1E2A5E 0%, #28387A 100%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      box-shadow: 0 2px 6px rgba(30, 42, 94, 0.18) !important;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
     }
-    .bg-teal-600:hover, .bg-teal-700:hover, .bg-cyan-600:hover, .bg-cyan-700:hover {
-      background-color: #141C40 !important;
+    button.bg-teal-600:hover, button.bg-teal-700:hover, button.bg-cyan-600:hover, button.bg-indigo-600:hover {
+      background: linear-gradient(135deg, #141C40 0%, #1E2A5E 100%) !important;
+      transform: translateY(-1px) !important;
+      box-shadow: 0 5px 14px rgba(30, 42, 94, 0.28) !important;
+    }
+
+    .bg-teal-600:not(.badge):not(button), .bg-teal-700:not(button), .bg-cyan-600:not(button), .bg-cyan-700:not(button) {
+      background-color: #1E2A5E !important;
     }
 
     .text-teal-900, .text-teal-800, .text-cyan-900 {
@@ -219,19 +278,44 @@
     }
 
     /* Card & Modal Polish */
-    .card-modern {
-      background: #FFFFFF;
-      border: 1px solid #E2E8F0;
-      border-radius: 1rem;
+    .card-modern, .bg-white.rounded-xl, .bg-white.rounded-2xl {
+      border: 1px solid #E2E8F0 !important;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03), 0 8px 20px -4px rgba(30, 42, 94, 0.05);
       transition: box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     /* Form Inputs Focus Polish */
+    input, select, textarea {
+      transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+    }
     input:focus, select:focus, textarea:focus {
       outline: none !important;
       border-color: #1E2A5E !important;
       box-shadow: 0 0 0 3px rgba(30, 42, 94, 0.12) !important;
+    }
+
+    /* Modern Modals Backdrop */
+    .fixed.inset-0.bg-black\/50, .fixed.inset-0.bg-black\/60, .fixed.inset-0.bg-gray-900.bg-opacity-50 {
+      background: rgba(15, 23, 42, 0.65) !important;
+      backdrop-filter: blur(8px) !important;
+      -webkit-backdrop-filter: blur(8px) !important;
+    }
+
+    /* Sidebar Enhanced Gradient */
+    #main-sidebar {
+      background: linear-gradient(180deg, #1E2A5E 0%, #162047 50%, #0D132D 100%) !important;
+      box-shadow: 4px 0 25px rgba(10, 15, 38, 0.25) !important;
+      border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+    }
+    .nav-item {
+      border-radius: 0.75rem !important;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      letter-spacing: 0.015em;
+    }
+    .nav-item:hover {
+      background-color: rgba(255, 255, 255, 0.12) !important;
+      color: #FFFFFF !important;
+      transform: translateX(3px) !important;
     }
 
     .urdu-text {
