@@ -262,6 +262,67 @@
       background-color: #F0FDF4 !important;
     }
 
+    /* High-Contrast Canteen Table Styles */
+    #canteen-monthly-table {
+      border-collapse: separate !important;
+      border-spacing: 0 !important;
+      width: 100% !important;
+    }
+    #canteen-monthly-table thead th {
+      background: #1B4332 !important;
+      color: #FFFFFF !important;
+      font-size: 0.72rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.04em !important;
+      padding: 10px 8px !important;
+      border-bottom: 2px solid #2D6A4F !important;
+      border-right: 1px solid rgba(255, 255, 255, 0.12) !important;
+      white-space: nowrap !important;
+      text-align: center !important;
+    }
+    #canteen-monthly-table thead th.canteen-th-name {
+      background: #0F2A1E !important;
+      color: #FFFFFF !important;
+      position: sticky !important;
+      left: 0 !important;
+      z-index: 30 !important;
+      text-align: left !important;
+      box-shadow: 2px 0 6px rgba(0, 0, 0, 0.25) !important;
+    }
+    #canteen-monthly-table thead th.canteen-th-highlight {
+      background: #163828 !important;
+      color: #F4A922 !important;
+    }
+    #canteen-monthly-table thead th.canteen-th-month-total {
+      background: #0F2A1E !important;
+      color: #FFFFFF !important;
+    }
+    #canteen-monthly-table thead th.canteen-th-grand-total {
+      background: #071812 !important;
+      color: #F4A922 !important;
+    }
+    #canteen-monthly-table tbody td {
+      white-space: nowrap !important;
+      padding: 7px 8px !important;
+      font-size: 0.82rem !important;
+      color: #1F2937 !important;
+      border-bottom: 1px solid #E5E7EB !important;
+      border-right: 1px solid #F3F4F6 !important;
+    }
+    #canteen-monthly-table tbody td.canteen-td-name {
+      position: sticky !important;
+      left: 0 !important;
+      z-index: 20 !important;
+      background-color: #FFFFFF !important;
+      color: #0F2A1E !important;
+      font-weight: 600 !important;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.06) !important;
+      border-right: 1px solid #E2E8F0 !important;
+    }
+    #canteen-monthly-table tbody tr:hover td.canteen-td-name:not(.bg-red-500) {
+      background-color: #F0FDF4 !important;
+    }
+
     /* Soft Modern Scrollbar */
     ::-webkit-scrollbar {
       width: 6px;
@@ -4909,9 +4970,10 @@
       // Set current month
       monthSelect.value = currentMonth;
 
-      // Populate years (current year and 2 years back)
+      // Populate years (allow from currentYear + 1 down to 2023 or currentYear - 3)
       yearSelect.innerHTML = '';
-      for (let y = currentYear; y >= currentYear - 2; y--) {
+      const minYear = Math.min(2023, currentYear - 3);
+      for (let y = currentYear + 1; y >= minYear; y--) {
         const option = document.createElement('option');
         option.value = y;
         option.textContent = y;
@@ -4962,21 +5024,25 @@
         ];
         monthDisplay.textContent = `${monthNames[month - 1]} ${year} - ${data.daysInMonth} days`;
 
-        // Build table header
+        // Build table header with clear contrast
         let headerHTML = `
-            <th class="px-4 py-3 text-left text-xs font-bold text-teal-900 uppercase tracking-wider sticky left-0 bg-teal-50 z-10" style="min-width: 150px;">Name</th>
-            <th class="px-4 py-3 text-center text-xs font-bold text-teal-900 uppercase tracking-wider" style="min-width: 120px;">Old Balance</th>
+            <th class="canteen-th-name" style="min-width: 170px;">
+              <span class="flex items-center gap-1.5"><i class="fas fa-user text-[#F4A922] text-[10px]"></i> Patient Name</span>
+            </th>
+            <th class="canteen-th-highlight" style="min-width: 130px;">
+              <span class="flex items-center justify-center gap-1.5"><i class="fas fa-wallet text-[10px]"></i> Old Balance</span>
+            </th>
           `;
 
         // Add day columns (1 to 28/29/30/31)
         for (let day = 1; day <= data.daysInMonth; day++) {
-          headerHTML += `<th class="px-3 py-3 text-center text-xs font-bold text-teal-900 uppercase" style="min-width: 60px;">${day}</th>`;
+          headerHTML += `<th style="min-width: 55px;">${day}</th>`;
         }
 
         headerHTML += `
-            <th class="px-4 py-3 text-center text-xs font-bold text-teal-900 uppercase tracking-wider" style="min-width: 100px;">Other</th>
-            <th class="px-4 py-3 text-center text-xs font-bold text-teal-900 uppercase tracking-wider bg-teal-100" style="min-width: 120px;">Month Total</th>
-            <th class="px-4 py-3 text-center text-xs font-bold text-teal-900 uppercase tracking-wider bg-teal-100" style="min-width: 120px;">Total</th>
+            <th class="canteen-th-highlight" style="min-width: 110px;">Other</th>
+            <th class="canteen-th-month-total" style="min-width: 130px;">Month Total</th>
+            <th class="canteen-th-grand-total" style="min-width: 130px;">All-Time Total</th>
           `;
 
         tableHeader.innerHTML = headerHTML;
@@ -4993,31 +5059,50 @@
           return !['true', '1', 'yes'].includes(String(flag || '').trim().toLowerCase());
         });
 
+        // Show empty state if no active patients found
+        if (activePatientsOnly.length === 0) {
+          const totalCols = (data.daysInMonth || 30) + 5;
+          tableBody.innerHTML = `
+            <tr>
+              <td colspan="${totalCols}" class="py-14 text-center bg-white">
+                <div class="flex flex-col items-center justify-center gap-2">
+                  <div class="w-12 h-12 rounded-full bg-emerald-50 flex items-center justify-center text-[#1B4332] text-xl mb-1 shadow-inner">
+                    <i class="fas fa-user-friends"></i>
+                  </div>
+                  <div class="text-sm font-bold text-gray-800">No Active Patients Found for ${monthNames[month - 1]} ${year}</div>
+                  <p class="text-xs text-gray-500 max-w-md">There are currently no active patient records for this month. Patients added in Patients Directory will automatically appear here.</p>
+                </div>
+              </td>
+            </tr>
+          `;
+          setTimeout(initDualScrollbars, 50);
+          return;
+        }
+
         activePatientsOnly.forEach((patient) => {
           const row = document.createElement('tr');
-          row.className = patient.isDischarged ? 'bg-gray-50 opacity-60' : 'hover:bg-gray-50';
+          row.className = patient.isDischarged ? 'bg-gray-50 opacity-60' : 'hover:bg-emerald-50/30';
 
           // Name cell with red background if month total exceeds old balance
           const nameClass = patient.exceedsBalance
             ? 'bg-red-500 text-white font-bold'
-            : 'bg-white';
+            : 'canteen-td-name';
           const dischargedBadge = patient.isDischarged
-            ? '<span class="ml-2 text-[9px] uppercase font-bold bg-gray-300 text-gray-600 px-1.5 py-0.5 rounded">Discharged</span>'
+            ? '<span class="ml-1.5 text-[9px] uppercase font-bold bg-gray-200 text-gray-600 px-1.5 py-0.5 rounded">Discharged</span>'
             : '';
 
           // Old Balance cell - editable for admin, show indicator if manually overridden
-          const isAdmin = currentUser.role === 'Admin';
           const oldBalanceEditable = isAdmin ? 'contenteditable="true"' : '';
-          const oldBalanceClass = isAdmin ? 'editable-cell cursor-text hover:bg-blue-50' : '';
+          const oldBalanceClass = isAdmin ? 'editable-cell cursor-text hover:bg-emerald-50 focus:bg-emerald-100 focus:outline-none' : 'bg-gray-50/40';
           const overrideIndicator = patient.hasManualOverride
-            ? '<i class="fas fa-edit text-blue-500 text-xs ml-1" title="Manually edited"></i>'
+            ? '<i class="fas fa-edit text-amber-500 text-xs ml-1" title="Manually edited"></i>'
             : '';
 
           row.innerHTML = `
-              <td class="px-4 py-3 whitespace-nowrap sticky left-0 ${nameClass} z-10 border-r">
+              <td class="${nameClass}">
                 ${patient.name} ${dischargedBadge}
               </td>
-              <td class="px-4 py-3 text-center font-semibold text-gray-700 ${oldBalanceClass}" 
+              <td class="text-center font-bold text-gray-800 ${oldBalanceClass}" 
                   ${oldBalanceEditable}
                   data-patient-id="${patient.id}"
                   data-entry-type="old-balance"
@@ -5038,11 +5123,11 @@
             const isEditable = isAdmin || (isCanteen && !amount);
             const editableAttr = isEditable ? 'contenteditable="true"' : '';
             const cellClass = isEditable
-              ? 'editable-cell cursor-text hover:bg-blue-50'
-              : 'bg-gray-100';
+              ? 'editable-cell cursor-text hover:bg-emerald-50 focus:bg-emerald-100 focus:outline-none'
+              : 'bg-gray-100/60 text-gray-400';
 
             row.innerHTML += `
-                <td class="px-2 py-2 text-center text-sm ${cellClass}" 
+                <td class="text-center text-xs font-medium text-gray-800 ${cellClass}" 
                     ${editableAttr}
                     data-patient-id="${patient.id}"
                     data-day="${day}"
@@ -5061,11 +5146,11 @@
           const otherEditable = isAdmin || (isCanteen && !otherAmount);
           const otherEditableAttr = otherEditable ? 'contenteditable="true"' : '';
           const otherCellClass = otherEditable
-            ? 'editable-cell cursor-text hover:bg-blue-50'
-            : 'bg-gray-100';
+            ? 'editable-cell cursor-text hover:bg-emerald-50 focus:bg-emerald-100 focus:outline-none'
+            : 'bg-gray-100/60 text-gray-400';
 
           row.innerHTML += `
-              <td class="px-3 py-2 text-center text-sm font-medium ${otherCellClass}" 
+              <td class="text-center text-xs font-semibold text-gray-800 ${otherCellClass}" 
                   ${otherEditableAttr}
                   data-patient-id="${patient.id}"
                   data-entry-type="other"
@@ -5078,14 +5163,14 @@
 
           // Month Total (calculated, not editable)
           row.innerHTML += `
-              <td class="px-4 py-3 text-center font-bold text-gray-900 bg-teal-50">
+              <td class="text-center font-extrabold text-[#1B4332] bg-emerald-50/70 text-xs">
                 ${formatCurrency(patient.monthTotal)}
               </td>
             `;
 
           // Total (all-time, not editable)
           row.innerHTML += `
-              <td class="px-4 py-3 text-center font-bold text-gray-900 bg-teal-50">
+              <td class="text-center font-extrabold text-amber-800 bg-amber-50/50 text-xs">
                 ${formatCurrency(patient.total)}
               </td>
             `;
@@ -10596,19 +10681,24 @@
       </div>
 
       <!-- Monthly Table -->
-      <div class="bg-white rounded shadow overflow-x-auto">
-        <div class="bg-gradient-to-r from-teal-700 to-teal-600 text-white px-6 py-3">
-          <h3 class="font-semibold text-lg">Monthly Canteen Tracker</h3>
-          <p class="text-xs opacity-90" id="canteen-month-display">Loading...</p>
+      <div class="bg-white rounded-2xl shadow-md border border-gray-200 overflow-hidden">
+        <div class="bg-gradient-to-r from-[#1B4332] via-[#163828] to-[#0F2A1E] text-white px-6 py-4 flex flex-col sm:flex-row justify-between sm:items-center gap-2 border-b border-[#2D6A4F]/40">
+          <div>
+            <h3 class="font-bold text-lg tracking-wide flex items-center gap-2"><i class="fas fa-utensils text-[#F4A922]"></i> Monthly Canteen Tracker</h3>
+            <p class="text-xs text-green-200 font-medium" id="canteen-month-display">Loading...</p>
+          </div>
+          <div class="text-xs text-amber-300 font-semibold bg-white/10 px-3 py-1 rounded-full w-fit">
+            <i class="fas fa-info-circle mr-1"></i> Click cell to edit daily allowance / old balance
+          </div>
         </div>
         <div class="overflow-x-auto table-scroll-shell" style="max-height: 600px; --table-scroll-max-height: 600px;">
           <table id="canteen-monthly-table" class="min-w-full divide-y divide-gray-200">
-            <thead class="bg-teal-50 sticky top-0">
+            <thead class="sticky top-0 z-30 shadow-sm">
               <tr id="canteen-table-header">
                 <!-- Headers will be dynamically generated -->
               </tr>
             </thead>
-            <tbody id="canteen-monthly-body" class="divide-y divide-gray-100">
+            <tbody id="canteen-monthly-body" class="divide-y divide-gray-100 bg-white">
               <!-- Rows will be dynamically generated -->
             </tbody>
           </table>
