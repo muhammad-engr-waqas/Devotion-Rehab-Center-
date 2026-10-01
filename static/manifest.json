@@ -1,15 +1,15 @@
 {
-  "name": "Hospital Management System",
-  "short_name": "HMS",
-  "description": "Hospital Management System",
+  "name": "Sunrise Path - Where Recovery Begins",
+  "short_name": "Sunrise Path",
+  "description": "Sunrise Path Rehabilitation Center Management System",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#F8F9FA",
-  "theme_color": "#1E2A5E",
+  "background_color": "#F0FDF4",
+  "theme_color": "#1B4332",
   "lang": "en",
-  "categories": ["medical", "health", "business"],
+  "categories": ["medical", "health", "rehabilitation", "business"],
   "icons": [
     {
       "src": "/static/favicon-96x96.png",
@@ -36,7 +36,7 @@
       "sizes": "512x512",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "Hospital Management System Dashboard"
+      "label": "Sunrise Path CRM Dashboard"
     }
   ],
   "shortcuts": [

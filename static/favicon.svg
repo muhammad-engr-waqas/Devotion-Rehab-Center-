@@ -1,44 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
-  <!-- White rounded background -->
-  <rect width="128" height="128" rx="24" fill="#ffffff"/>
-
-  <!-- Green neural brain (left side) -->
-  <g fill="none" stroke="#2d8a3e" stroke-width="2">
-    <!-- Brain outline -->
-    <path d="M14 52 C14 34 24 22 34 24 C36 16 42 14 48 18 C52 12 58 14 60 20 C68 18 74 26 72 38 C78 42 80 52 76 58 C78 64 74 72 68 74 C66 82 58 86 52 82 C48 86 42 86 38 82 C30 84 22 76 22 66 C14 62 12 56 14 52Z"/>
-    <!-- Stem -->
-    <path d="M38 82 C38 88 40 92 42 94" stroke-width="1.5"/>
-    <!-- Neural dots -->
-    <circle cx="28" cy="38" r="2.5" fill="#2d8a3e" stroke="none"/>
-    <circle cx="40" cy="26" r="2.5" fill="#2d8a3e" stroke="none"/>
-    <circle cx="52" cy="22" r="2.5" fill="#2d8a3e" stroke="none"/>
-    <circle cx="64" cy="32" r="2.5" fill="#2d8a3e" stroke="none"/>
-    <circle cx="72" cy="46" r="2.5" fill="#2d8a3e" stroke="none"/>
-    <circle cx="64" cy="62" r="2.5" fill="#2d8a3e" stroke="none"/>
-    <circle cx="44" cy="70" r="2.5" fill="#2d8a3e" stroke="none"/>
-    <circle cx="26" cy="60" r="2.5" fill="#2d8a3e" stroke="none"/>
-    <circle cx="46" cy="46" r="2.5" fill="#2d8a3e" stroke="none"/>
-    <!-- Connections -->
-    <line x1="28" y1="38" x2="40" y2="26" stroke-width="1.2"/>
-    <line x1="40" y1="26" x2="52" y2="22" stroke-width="1.2"/>
-    <line x1="52" y1="22" x2="64" y2="32" stroke-width="1.2"/>
-    <line x1="64" y1="32" x2="72" y2="46" stroke-width="1.2"/>
-    <line x1="72" y1="46" x2="64" y2="62" stroke-width="1.2"/>
-    <line x1="64" y1="62" x2="44" y2="70" stroke-width="1.2"/>
-    <line x1="44" y1="70" x2="26" y2="60" stroke-width="1.2"/>
-    <line x1="26" y1="60" x2="28" y2="38" stroke-width="1.2"/>
-    <line x1="28" y1="38" x2="46" y2="46" stroke-width="1.2"/>
-    <line x1="46" y1="46" x2="64" y2="32" stroke-width="1.2"/>
-    <line x1="46" y1="46" x2="64" y2="62" stroke-width="1.2"/>
-    <line x1="40" y1="26" x2="46" y2="46" stroke-width="1.2"/>
-  </g>
-
-  <!-- HMS text - green bold -->
-  <text x="100" y="56" text-anchor="middle" font-family="Arial Black, Arial" font-weight="900" font-size="34" fill="#0d9488" letter-spacing="1">HMS</text>
-
-  <!-- Hospital Management System -->
-  <text x="100" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="6" fill="#555555" letter-spacing="0.2">HOSPITAL MANAGEMENT</text>
-
-  <!-- Healthcare & Clinical Services line -->
-  <text x="100" y="83" text-anchor="middle" font-family="Arial, sans-serif" font-weight="400" font-size="6" fill="#888888" letter-spacing="0.3">Healthcare &amp; Clinical Services</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="48" fill="#1B4332" stroke="#40916C" stroke-width="2"/>
+  <!-- Sun -->
+  <circle cx="50" cy="28" r="10" fill="#F4A922"/>
+  <!-- Sun rays -->
+  <line x1="50" y1="14" x2="50" y2="11" stroke="#F4A922" stroke-width="2" stroke-linecap="round"/>
+  <line x1="61" y1="17" x2="63" y2="14" stroke="#F4A922" stroke-width="2" stroke-linecap="round"/>
+  <line x1="39" y1="17" x2="37" y2="14" stroke="#F4A922" stroke-width="2" stroke-linecap="round"/>
+  <!-- Tree trunk -->
+  <rect x="47" y="52" width="6" height="14" fill="#2D6A4F" rx="2"/>
+  <!-- Tree canopy -->
+  <circle cx="50" cy="46" r="16" fill="#52B788"/>
+  <circle cx="38" cy="50" r="10" fill="#52B788"/>
+  <circle cx="62" cy="50" r="10" fill="#52B788"/>
+  <!-- Path -->
+  <path d="M50 66 Q45 72 42 80 Q46 80 50 80 Q54 80 58 80 Q55 72 50 66Z" fill="#74C69D"/>
+  <!-- Hills -->
+  <ellipse cx="25" cy="75" rx="20" ry="10" fill="#2D6A4F" opacity="0.7"/>
+  <ellipse cx="75" cy="75" rx="20" ry="10" fill="#2D6A4F" opacity="0.7"/>
 </svg>

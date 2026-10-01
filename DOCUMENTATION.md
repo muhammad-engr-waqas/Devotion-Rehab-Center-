@@ -1,7 +1,7 @@
-# Hospital Management System (HMS)
+# Sunrise Path - Rehabilitation Center (CRM / HMS)
 
 ## 1. Introduction
-**Hospital Management System (HMS)** is a robust, full-stack Hospital Management and Customer Relationship Management (CRM) system. It streamlines patient admissions, financial tracking, medical records, and daily administrative operations.
+**Sunrise Path — Where Recovery Begins** is a robust, full-stack Rehabilitation Management and Customer Relationship Management (CRM) system. It streamlines patient admissions, financial tracking, medical records, recovery programs, and daily administrative operations.
 
 The system is built as a highly interactive, single-page application (SPA) focused on usability, data integrity, and role-based access.
 

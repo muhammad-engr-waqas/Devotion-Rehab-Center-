@@ -1,6 +1,6 @@
-# Hospital Management System (HMS)
+# Sunrise Path - Rehabilitation Center (CRM / HMS)
 
-This is a comprehensive Hospital Management System.
+This is a comprehensive Management System for **Sunrise Path — Where Recovery Begins**.
 
 ## 📄 Documentation
 
@@ -24,5 +24,5 @@ For full technical details, feature guides, and setup instructions, please refer
 4. **Access UI**: Go to [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
 ## 🛡️ License
-Proprietary - Hospital Management System.
+Proprietary - Sunrise Path.
 
