@@ -137,3 +137,9 @@ The system supports exporting financial and patient data using **Pandas**. You c
 - **MongoDB Connection**: Ensure the `MONGO_URI` is correct and accessible.
 - **Email Resets**: If resets fail, check if "Less Secure Apps" (or App Passwords) are enabled for your Gmail account.
 - **Photo Uploads**: Currently supports URL-based image referencing (Base64 or external links stored in MongoDB).
+
+---
+
+## 10. Contact & Support
+- **Helpline Numbers:** `0321 7357742` / `0309 6703959`
+- **Official Admin Email:** `admin@sunrisepathrehab.com`

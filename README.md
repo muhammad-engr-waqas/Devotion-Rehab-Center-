@@ -23,6 +23,10 @@ For full technical details, feature guides, and setup instructions, please refer
    ```
 4. **Access UI**: Go to [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
+## 📞 Official Contacts
+- **Helpline Numbers:** 0321 7357742 / 0309 6703959
+- **Support & Admin Email:** [admin@sunrisepathrehab.com](mailto:admin@sunrisepathrehab.com)
+
 ## 🛡️ License
 Proprietary - Sunrise Path.
 

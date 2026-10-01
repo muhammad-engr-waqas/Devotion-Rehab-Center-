@@ -106,7 +106,7 @@ def ensure_initial_admin():
                 'password': generate_password_hash('password123'),
                 'role': 'Admin',
                 'name': 'Imran Khan (Admin)',
-                'email': os.environ.get('ADMIN_EMAIL', 'admin@example.com').strip().lower(),
+                'email': os.environ.get('ADMIN_EMAIL', 'admin@sunrisepathrehab.com').strip().lower(),
                 'created_at': datetime.now()
             }
             mongo.db.users.insert_one(admin_user)
@@ -186,7 +186,11 @@ def send_password_reset_email(to_email, username, token):
         "We received a request to reset your password. "
         f"Use the link below to set a new password (valid for {expires_in} minutes).\n\n"
         f"{reset_link}\n\n"
-        "If you did not request this, you can safely ignore this email."
+        "If you did not request this, you can safely ignore this email.\n\n"
+        "—\n"
+        "Sunrise Path Support\n"
+        "Helpline: 0321 7357742 / 0309 6703959\n"
+        "Email: admin@sunrisepathrehab.com"
     )
 
     try:
